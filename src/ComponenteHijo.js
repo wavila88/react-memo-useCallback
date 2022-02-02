@@ -11,4 +11,6 @@ const ComponenteHijo = ({texto, cuenta, sumarUno}) => {
 	);
 }
  
-export default React.memo(ComponenteHijo);
+export default React.memo(ComponenteHijo, (previousProps, nextProps) => {
+	return previousProps.cuenta === nextProps.cuenta ? true: false;
+});
